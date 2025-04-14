@@ -1,6 +1,8 @@
 from django.db import models
 
 # models.py
+
+
 class Event(models.Model):
     base_event_id = models.IntegerField()
     title = models.CharField(max_length=200)
@@ -16,7 +18,6 @@ class Event(models.Model):
     numbered = models.BooleanField()
     sell_mode = models.CharField(max_length=50, default='online')  # <-- NUEVO
     event_id = models.CharField(max_length=100)
-
 
     def __str__(self):
         return f"{self.title} ({self.event_start_date})"

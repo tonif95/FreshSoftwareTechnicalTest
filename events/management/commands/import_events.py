@@ -5,6 +5,7 @@ from datetime import datetime
 from django.utils import timezone
 from datetime import timezone as dt_timezone
 
+
 class Command(BaseCommand):
     help = 'Importa los eventos desde un archivo XML'
 
@@ -27,10 +28,14 @@ class Command(BaseCommand):
                 base_event_id = base_event.get('base_event_id')
 
                 for event in base_event.findall('event'):
-                    event_start_date = timezone.make_aware(datetime.fromisoformat(event.get('event_start_date')), dt_timezone.utc)
-                    event_end_date = timezone.make_aware(datetime.fromisoformat(event.get('event_end_date')), dt_timezone.utc)
-                    sell_from = timezone.make_aware(datetime.fromisoformat(event.get('sell_from')), dt_timezone.utc)
-                    sell_to = timezone.make_aware(datetime.fromisoformat(event.get('sell_to')), dt_timezone.utc)
+                    event_start_date = timezone.make_aware(datetime.fromisoformat(
+                        event.get('event_start_date')), dt_timezone.utc)
+                    event_end_date = timezone.make_aware(datetime.fromisoformat(
+                        event.get('event_end_date')), dt_timezone.utc)
+                    sell_from = timezone.make_aware(datetime.fromisoformat(
+                        event.get('sell_from')), dt_timezone.utc)
+                    sell_to = timezone.make_aware(datetime.fromisoformat(
+                        event.get('sell_to')), dt_timezone.utc)
                     sold_out = event.get('sold_out') == 'false'
                     event_id = event.get('event_id')
 
@@ -67,10 +72,14 @@ class Command(BaseCommand):
             ))
 
         except FileNotFoundError:
-            self.stdout.write(self.style.ERROR(f'Error: El archivo "{xml_file}" no fue encontrado en la misma carpeta.'))
+            self.stdout.write(self.style.ERROR(
+                f'Error: El archivo "{xml_file}" no fue encontrado en la misma carpeta.'))
         except ET.ParseError as e:
-            self.stdout.write(self.style.ERROR(f'Error al parsear el archivo XML: {e}'))
+            self.stdout.write(self.style.ERROR(
+                f'Error al parsear el archivo XML: {e}'))
         except ValueError as e:
-            self.stdout.write(self.style.ERROR(f'Error de formato en el archivo XML: {e}'))
+            self.stdout.write(self.style.ERROR(
+                f'Error de formato en el archivo XML: {e}'))
         except Exception as e:
-            self.stdout.write(self.style.ERROR(f'Ocurrió un error inesperado: {e}'))
+            self.stdout.write(self.style.ERROR(
+                f'Ocurrió un error inesperado: {e}'))

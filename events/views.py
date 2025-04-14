@@ -27,6 +27,8 @@ ends_at_param = openapi.Parameter(
 )
 
 # Vista de la API con documentación Swagger
+
+
 @swagger_auto_schema(
     method='get',
     manual_parameters=[starts_at_param, ends_at_param],
@@ -63,7 +65,6 @@ ends_at_param = openapi.Parameter(
         )
     }
 )
-
 @api_view(['GET'])
 def get_events(request):
     starts_at = request.GET.get('starts_at')
@@ -101,5 +102,3 @@ def get_events(request):
     ]
 
     return Response({'events': events_data}, status=status.HTTP_200_OK)
-
-
