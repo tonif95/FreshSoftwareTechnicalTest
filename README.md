@@ -1,5 +1,3 @@
-# FreshSoftwareTechnicalTest
-
 # Fresh Software Code Challenge
 
 Este proyecto ha sido desarrollado como parte de la prueba técnica para Fresh Software. La finalidad es crear un microservicio que integre eventos de un proveedor externo y los exponga mediante un endpoint con filtros de fechas y modo de venta.
