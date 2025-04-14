@@ -70,7 +70,7 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS(
                 f'Importación finalizada: {imported_count} nuevos, {updated_count} actualizados.'
             ))
-
+        #Establecemos mensajes de error mas clarificadores segun la naturaleza del error
         except FileNotFoundError:
             self.stdout.write(self.style.ERROR(
                 f'Error: El archivo "{xml_file}" no fue encontrado en la misma carpeta.'))

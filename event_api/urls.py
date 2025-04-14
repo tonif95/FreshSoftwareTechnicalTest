@@ -8,7 +8,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Events API",
         default_version='v1',
-        description="Documentación de la API para la prueba técnica",
+        description="Documentación de la API para la prueba técnica de Fresh Software",
         contact=openapi.Contact(email="antoniferrandis@gmail.com"),
     ),
     public=True,
@@ -17,7 +17,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('events.urls')),
+    path('api/', include('events.urls')),
+    #URLs que usaremos para visualizar la documentación
     path('documentation<format>/',
          schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('documentation/', schema_view.with_ui('swagger',

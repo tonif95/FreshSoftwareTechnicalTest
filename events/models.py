@@ -16,8 +16,8 @@ class Event(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     name = models.CharField(max_length=100)
     numbered = models.BooleanField()
-    sell_mode = models.CharField(max_length=50, default='online')  # <-- NUEVO
-    event_id = models.CharField(max_length=100)
+    sell_mode = models.CharField(max_length=50, default='online')  # Lo necesitamos para filtrar 
+    event_id = models.CharField(max_length=100) # Nos sirve para identificar los cambios en los eventos
 
     def __str__(self):
         return f"{self.title} ({self.event_start_date})"

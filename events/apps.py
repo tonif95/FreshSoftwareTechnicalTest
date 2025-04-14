@@ -8,7 +8,7 @@ class EventsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'events'
 
-    def ready(self):
+    def ready(self): # Función para inicializar la importación de eventos cada vez que iniciemos el servidor
         if 'runserver' in sys.argv and os.environ.get('RUN_MAIN') == 'true':
             print("Importando eventos al iniciar Django...")
-            subprocess.run(['python', 'manage.py', 'import_events'])
+            subprocess.run(['python', 'manage.py', 'import_events']) # 

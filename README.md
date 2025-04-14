@@ -31,7 +31,7 @@ El sistema convierte las fechas recibidas en los parámetros de URL a formato **
 
 1. Clonar el repositorio.
 2. Crear un entorno virtual y activarlo.
-3. Instalar las dependencias:
-   ```bash
+3. Instalar las dependencias:  
    pip install -r requirements.txt
-   ```
+4. Inicializar el servidor con el comando "python manage.py runserver"
+5. Realizar una solicitud GET que contenga los parametros `starts_at` y `ends_at`. Ejemplo: `http://127.0.0.1:8000/api/events/?starts_at=2025-02-01T00:00:00&ends_at=2026-08-01T00:00:00`
