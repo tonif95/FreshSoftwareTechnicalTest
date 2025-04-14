@@ -1,1 +1,39 @@
 # FreshSoftwareTechnicalTest
+
+# Fresh Software Code Challenge
+
+Este proyecto ha sido desarrollado como parte de la prueba técnica para Fresh Software. La finalidad es crear un microservicio que integre eventos de un proveedor externo y los exponga mediante un endpoint con filtros de fechas y modo de venta.
+
+## 📌 Tecnologías utilizadas
+
+- Python 3.x
+- Django
+- Django REST Framework
+- SQLite
+- drf-yasg (Swagger)
+- autopep8
+
+## 📚 Descripción
+
+El microservicio expone un único endpoint `/api/events/` que permite obtener los eventos disponibles en un rango de fechas dado, aplicando los siguientes filtros:
+
+- **Solo eventos cuyo `sell_mode` sea `online`**
+- **Solo eventos cuya fecha esté dentro del rango proporcionado en los parámetros `starts_at` y `ends_at`**
+
+Dado que la API de ejemplo no funciona, se ha adaptado el sistema para obtener los eventos desde un archivo XML local con el mismo formato que tendría la API. Este archivo se importa automáticamente a la base de datos SQLite cada vez que se ejecuta el servidor, actualizando o insertando eventos según su `id` único.
+
+El sistema convierte las fechas recibidas en los parámetros de URL a formato **time-aware en UTC**, ya que Django está configurado de esa forma.
+
+## 📖 Endpoints
+
+- `GET /api/events/`: Devuelve los eventos que cumplen con los filtros indicados.
+- `GET /documentation/`: Documentación interactiva Swagger/OpenAPI del endpoint.
+
+## 🛠️ Instalación y ejecución
+
+1. Clonar el repositorio.
+2. Crear un entorno virtual y activarlo.
+3. Instalar las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
