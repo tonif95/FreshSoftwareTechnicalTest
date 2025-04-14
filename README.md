@@ -29,6 +29,12 @@ Dado que la API de ejemplo no funciona, se ha adaptado el sistema para obtener l
 
 1. Clonar el repositorio.
 2. Crear un entorno virtual y activarlo.
+3. Usar el comando `make run`
+
+o
+
+1. Clonar el repositorio.
+2. Crear un entorno virtual y activarlo.
 3. Instalar las dependencias:  
    `pip install -r requirements.txt`
 4. Inicializar el servidor con el comando "python manage.py runserver"
