@@ -30,6 +30,7 @@ Dado que la API de ejemplo no funciona, se ha adaptado el sistema para obtener l
 1. Clonar el repositorio.
 2. Crear un entorno virtual y activarlo.
 3. Usar el comando `make run`
+4. Realizar una solicitud GET que contenga los parametros `starts_at` y `ends_at`. Ejemplo: `http://127.0.0.1:8000/api/events/?starts_at=2025-02-01T00:00:00&ends_at=2026-08-01T00:00:00`
 
 o
 
